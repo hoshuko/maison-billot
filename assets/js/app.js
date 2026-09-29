@@ -894,6 +894,9 @@
   /* ---------- Fiche morceau ---------- */
   const D = { el: $('#drawer'), body: $('#d-body'), scrim: $('#scrim'), id: null, back: null };
   function dots(n) { return `<span class="dots" aria-label="${UI.outOf5(n)}">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= n ? 'on' : ''}"></i>`).join('')}</span>`; }
+  function lockScroll(e) {
+    if (!e.target.closest('#drawer')) e.preventDefault();
+  }
   function openDrawer(id) {
     const cut = CUT[id];
     if (!cut) return;
@@ -915,7 +918,8 @@
     $('#d-add').addEventListener('click', () => addItem('c-' + id, 1));
     D.scrim.hidden = false;
     D.el.hidden = false;
-    document.documentElement.style.overflow = 'hidden';
+    addEventListener('wheel', lockScroll, { passive: false });
+    addEventListener('touchmove', lockScroll, { passive: false });
     requestAnimationFrame(() => { D.scrim.classList.add('on'); D.el.classList.add('on'); });
     D.body.scrollTop = 0;
     $('#d-close').focus({ preventScroll: true });
@@ -923,9 +927,10 @@
   function closeDrawer() {
     if (!D.id) return;
     D.id = null;
+    removeEventListener('wheel', lockScroll);
+    removeEventListener('touchmove', lockScroll);
     D.scrim.classList.remove('on');
     D.el.classList.remove('on');
-    document.documentElement.style.overflow = '';
     setTimeout(() => { if (!D.id) { D.el.hidden = true; D.scrim.hidden = true; } }, 450);
     if (D.back && D.back.focus) D.back.focus({ preventScroll: true });
   }

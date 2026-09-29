@@ -542,9 +542,10 @@ button.xl { cursor: pointer; }
 .slots { display: grid; gap: 8px; }
 .slots-label { font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .slot-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.recap { border-radius: 16px; background: #fff; border: 1.5px solid var(--rule); padding: 18px; display: grid; gap: 12px; }
-.recap-title { font: 700 22px/1.1 var(--display); }
-.recap pre { margin: 0; font: 400 12.5px/1.5 var(--mono); white-space: pre-wrap; background: var(--tile-2); border-radius: 10px; padding: 12px; user-select: all; }
+.recap { border-radius: 18px; background: #fff; border: 1.5px solid var(--rule); padding: 22px; display: grid; gap: 14px; box-shadow: 0 16px 36px -16px rgba(30, 21, 22, .18); }
+.recap-title { font: italic 800 24px/1.1 var(--display); margin: 0; color: var(--ink); }
+.recap p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.45; }
+.recap pre { margin: 0; font: 500 13px/1.6 var(--mono); white-space: pre-wrap; background: var(--tile-2); border: 1px dashed var(--rule); border-radius: 12px; padding: 16px; user-select: all; color: var(--ink); }
 
 /* ---------- 7. Infos ---------- */
 .infos { background: var(--vert-3); color: var(--creme); padding-top: clamp(80px, 10vw, 130px); overflow: hidden; position: relative; }
