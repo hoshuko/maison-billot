@@ -240,8 +240,8 @@ a { color: inherit; }
   font: italic 800 min(36vw, 62vh)/.8 var(--display); letter-spacing: -.03em; color: var(--rose); user-select: none;
 }
 .hero-copy {
-  position: absolute; z-index: 3; left: var(--gut); top: calc(var(--nav-h) + clamp(28px, 7vh, 88px));
-  width: min(540px, 44vw); display: grid; gap: 22px; will-change: transform, opacity;
+  position: absolute; z-index: 3; left: var(--gut); top: calc(var(--nav-h) + clamp(16px, 4vh, 60px));
+  width: min(540px, 44vw); display: grid; gap: clamp(14px, 1.8vh, 22px); will-change: transform, opacity;
 }
 .hero-title { font: 800 clamp(58px, 8.6vw, 136px)/.9 var(--display); letter-spacing: -.025em; font-variation-settings: 'opsz' 96; display: grid; }
 .hero-title .ln { display: block; }
@@ -670,7 +670,7 @@ button.xl { cursor: pointer; }
   .drawer { top: auto; height: 90vh; height: 90svh; width: 100vw; border-radius: 22px 22px 0 0; transform: translateY(104%); }
   .drawer.on { transform: none; }
 }
-@media (max-height: 800px) and (min-width: 761px) { .fiche { display: none; } }
+@media (max-height: 890px) and (min-width: 761px) { .fiche { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
